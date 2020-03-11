@@ -14,7 +14,7 @@ public class TitleVerification3 {
         for (String url: urls){
             WebDriver driver= BrowserFactory.getDriver("chrome");
             driver.get(url);
-            if(urls.contains(driver.getTitle().replace(" ","").toLowerCase())){
+            if(url.contains(driver.getTitle().replace(" ","").toLowerCase())){
                 System.out.println("TEST PASSED!");
             }else{
                 System.out.println("TEST FAILED!");
