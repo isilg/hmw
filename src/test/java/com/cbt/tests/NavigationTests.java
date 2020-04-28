@@ -19,84 +19,71 @@ public class NavigationTests {
         WebDriver driver = BrowserFactory.getDriver("chrome");
         driver.get("https://google.com");
         String actualTitleGoogle = driver.getTitle();
-
         Thread.sleep(2000);
 
         driver.navigate().to("https://etsy.com");
         String actualTitleEtsy = driver.getTitle();
-
         Thread.sleep(2000);
+
         driver.navigate().back();
         String afterNavigateGoogleTitle = driver.getTitle();
-
-
         StringUtility.verifyEquals(actualTitleGoogle, afterNavigateGoogleTitle);
         Thread.sleep(2000);
 
         driver.navigate().forward();
         String afterNavigateEtsyTitle = driver.getTitle();
-
         StringUtility.verifyEquals(actualTitleEtsy, afterNavigateEtsyTitle);
-
-
         Thread.sleep(2000);
+
+
         driver.quit();
 
     }
 
     public static void firefoxTest() throws Exception {
-        WebDriver driver = BrowserFactory.getDriver("chrome");
+        WebDriver driver = BrowserFactory.getDriver("firefox");
         driver.get("https://google.com");
         String actualTitleGoogle = driver.getTitle();
-
         Thread.sleep(2000);
 
         driver.navigate().to("https://etsy.com");
         String actualTitleEtsy = driver.getTitle();
-
         Thread.sleep(2000);
+
         driver.navigate().back();
         String afterNavigateGoogleTitle = driver.getTitle();
-
-
         StringUtility.verifyEquals(actualTitleGoogle, afterNavigateGoogleTitle);
-
         Thread.sleep(2000);
+
         driver.navigate().forward();
         String afterNavigateEtsyTitle = driver.getTitle();
-
         StringUtility.verifyEquals(actualTitleEtsy, afterNavigateEtsyTitle);
-
-
         Thread.sleep(2000);
+
         driver.quit();
 
     }
 
     public static void edgeTest() throws Exception {
-        WebDriver driver = BrowserFactory.getDriver("chrome");
+        WebDriver driver = BrowserFactory.getDriver("edge");
         driver.get("https://google.com");
         String actualTitleGoogle = driver.getTitle();
-
         Thread.sleep(2000);
 
         driver.navigate().to("https://etsy.com");
         String actualTitleEtsy = driver.getTitle();
-
         Thread.sleep(2000);
+
         driver.navigate().back();
         String afterNavigateGoogleTitle = driver.getTitle();
-
-
         StringUtility.verifyEquals(actualTitleGoogle, afterNavigateGoogleTitle);
-
         Thread.sleep(2000);
+
         driver.navigate().forward();
         String afterNavigateEtsyTitle = driver.getTitle();
-
         StringUtility.verifyEquals(actualTitleEtsy, afterNavigateEtsyTitle);
-
         Thread.sleep(2000);
+
         driver.quit();
 
     }
