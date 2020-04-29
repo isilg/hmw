@@ -30,9 +30,19 @@ public class TitleVerification {
         Thread.sleep(3000);
 
         for (String url: urls) {
-
             urlList.add(url.startsWith("http://practice.cybertekschool.com"));
         }
+        //II.WAY
+//        for (String url:urls){
+//            driver.get(url);
+//            if (url.startsWith("http://practice.cybertekschool.com")){
+//                System.out.println("PASSED");
+//            }else{
+//                System.out.println("FAILED");
+//            }
+//        }
+//        System.out.println(urlList); -> [true,true,true]  doner o yuzden List<Boolean> dedik
+
 
 
         driver.quit();
