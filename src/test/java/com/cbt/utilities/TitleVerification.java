@@ -1,10 +1,8 @@
 package com.cbt.utilities;
-
 import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 public class TitleVerification {
 
     public static void main(String[] args) throws Exception {
