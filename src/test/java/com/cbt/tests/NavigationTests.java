@@ -8,15 +8,38 @@ public class NavigationTests {
     public static void main(String[] args)throws Exception {
 
         safariTest();
-//        chromeTest();
-//        firefoxTest();
-//        edgeTest();
+        chromeTest();
+        firefoxTest();
+        edgeTest();
 
     }
 
     public static void  safariTest() throws Exception{
         WebDriver driver = BrowserFactory.getDriver("safari");
         driver.get("https://google.com");
+        String titleG = driver.getTitle();
+        Thread.sleep(2);
+
+        driver.navigate().to("https://etsy.com");
+        String titleE = driver.getTitle();
+        Thread.sleep(2000);
+
+        driver.navigate().back();
+        String afterNavigateGoogleTitle = driver.getTitle();
+        StringUtility.verifyEquals(titleG, afterNavigateGoogleTitle);
+        Thread.sleep(2000);
+
+        driver.navigate().forward();
+        String afterNavigateEtsyTitle = driver.getTitle();
+        StringUtility.verifyEquals(titleE, afterNavigateEtsyTitle);
+        Thread.sleep(2000);
+
+
+        driver.quit();
+
+
+
+
     }
 
     public static void chromeTest() throws Exception {
