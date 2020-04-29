@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserFactory {
 
@@ -21,13 +22,13 @@ public class BrowserFactory {
             WebDriverManager.iedriver().setup();
             return new InternetExplorerDriver();
         } else if (browserName.equalsIgnoreCase("safari")) {
-            return null;
+            return new SafariDriver();
         } else if (browserName.equalsIgnoreCase("opera")) {
             WebDriverManager.operadriver().setup();
             return new OperaDriver();
+            //Requirement is if u r using Mac and the argument is edge, return null
         } else if (browserName.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            return new EdgeDriver();
+            return null;
         }
         return null;
     }
